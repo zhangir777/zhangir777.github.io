@@ -8,17 +8,21 @@
 <meta property="og:title" content="Zhangir Akhmetov: Python developer">
 <meta property="og:description" content="Web scraping, Telegram bots, AI chatbots, automation and dashboards.">
 <style>
-:root{--bg:#0b0f17;--card:#121826;--line:#1f2937;--text:#e5e7eb;--muted:#9ca3af;--accent:#38bdf8;--accent2:#818cf8}
+:root{--bg:#f8fafc;--card:#ffffff;--line:#e2e8f0;--text:#0f172a;--muted:#475569;--accent:#0369a1;--accent2:#6366f1;--navbg:rgba(248,250,252,.88);--shot:#f1f5f9;--tag:#e0f2fe;--btnfg:#ffffff;--shadow:0 1px 3px rgba(15,23,42,.08);--c1:#e0f2fe;--c2:#eef2ff}
+[data-theme=dark]{--bg:#0b0f17;--card:#121826;--line:#1f2937;--text:#e5e7eb;--muted:#9ca3af;--accent:#38bdf8;--accent2:#818cf8;--navbg:rgba(11,15,23,.85);--shot:#0d1320;--tag:#0d1a2b;--btnfg:#04121c;--shadow:none;--c1:#0f2236;--c2:#1a1b3a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;background:rgba(11,15,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav{position:sticky;top:0;background:var(--navbg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
 nav b{font-weight:700}
 nav .links a{margin-left:20px;color:var(--muted);font-size:.95rem}
+#theme{margin-left:20px;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:99px;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+#theme:hover{border-color:var(--accent)}
+nav .links{display:flex;align-items:center}
 nav .links a:hover{color:var(--text);text-decoration:none}
 .hero{padding:88px 0 56px}
 .hero h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
@@ -27,38 +31,38 @@ nav .links a:hover{color:var(--text);text-decoration:none}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-block;padding:11px 20px;border-radius:10px;border:1px solid var(--line);color:var(--text);font-weight:600}
 .btn:hover{text-decoration:none;border-color:var(--accent)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#04121c}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--btnfg)}
 .btn.primary:hover{filter:brightness(1.1)}
 section{padding:48px 0}
 h2{font-size:1.7rem;margin:0 0 24px;letter-spacing:-.01em}
 .grid{display:grid;gap:16px}
 .services{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.svc{box-shadow:var(--shadow);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
 .svc h3{margin:0 0 6px;font-size:1.05rem}
 .svc p{margin:0;color:var(--muted);font-size:.95rem}
 .projects{grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+.card{box-shadow:var(--shadow);background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
 .card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.card .shot{height:200px;background:#0d1320;overflow:hidden;border-bottom:1px solid var(--line)}
+.card .shot{height:200px;background:var(--shot);overflow:hidden;border-bottom:1px solid var(--line)}
 .card .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .card h3{margin:0;font-size:1.1rem}
 .card p{margin:0;color:var(--muted);font-size:.93rem;flex:1}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-size:.75rem;padding:2px 9px;border-radius:99px;background:#0d1a2b;border:1px solid var(--line);color:var(--accent)}
+.tags span{font-size:.75rem;padding:2px 9px;border-radius:99px;background:var(--tag);border:1px solid var(--line);color:var(--accent)}
 .row{display:flex;gap:16px;font-size:.92rem;margin-top:4px}
 .stack{display:flex;flex-wrap:wrap;gap:8px}
 .stack span{padding:6px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:.9rem}
-.contact{background:linear-gradient(135deg,#0f2236,#1a1b3a);border:1px solid var(--line);border-radius:18px;padding:36px;text-align:center}
+.contact{background:linear-gradient(135deg,var(--c1),var(--c2));border:1px solid var(--line);border-radius:18px;padding:36px;text-align:center}
 .contact p{color:var(--muted);margin:0 0 22px}
 .contact .btns{justify-content:center}
 footer{padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line);margin-top:24px}
-@media(max-width:600px){nav .links a:not(:last-child){display:none}.hero{padding:56px 0 32px}}
+@media(max-width:600px){nav .links a{display:none}.hero{padding:56px 0 32px}}
 </style>
 </head>
 <body>
 <nav><div class="wrap"><b>Zhangir Akhmetov</b>
-<div class="links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></div></nav>
+<div class="links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a><button id="theme" type="button" aria-label="Switch theme">Dark</button></div></div></nav>
 
 <header class="hero"><div class="wrap">
 <h1>Python developer.<br><span>Bots, scrapers, automation.</span></h1>
@@ -119,7 +123,7 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center;borde
 <div class="tags"><span>FastAPI</span><span>Sheets API</span><span>n8n</span></div>
 <div class="row"><a href="https://github.com/zhangir777/business-automation-kit" target="_blank" rel="noopener">Code</a></div></div></article>
 
-<article class="card"><div class="shot"><div style="height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem">🏠</div></div><div class="body">
+<article class="card"><div class="shot"><img src="img/monitor.jpg" alt="New listing notification in Telegram" loading="lazy"></div><div class="body">
 <h3>Listings monitor bot</h3><p>Watches Krisha.kz searches and sends new listings to Telegram as they appear.</p>
 <div class="tags"><span>aiogram 3</span><span>SQLite</span><span>Docker</span></div>
 <div class="row"><a href="https://t.me/zhangir_monitor_bot" target="_blank" rel="noopener">Try the bot</a><a href="https://github.com/zhangir777/listings-monitor-bot" target="_blank" rel="noopener">Code</a></div></div></article>
@@ -142,5 +146,12 @@ footer{padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center;borde
 </div></div></div></section>
 
 <footer><div class="wrap">© 2026 Zhangir Akhmetov</div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('theme');
+function set(t){if(t==='dark')r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme');b.textContent=t==='dark'?'Light':'Dark';try{localStorage.setItem('theme',t)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+set(saved==='dark'?'dark':'light');
+b.addEventListener('click',function(){set(r.getAttribute('data-theme')==='dark'?'light':'dark')});})();
+</script>
 </body>
 </html>
